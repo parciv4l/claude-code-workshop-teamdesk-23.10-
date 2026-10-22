@@ -12,6 +12,7 @@
     "db:apply:remote": "wrangler d1 migrations apply DB --remote",
     "db:seed": "wrangler d1 execute DB --local --file ../../packages/db/seed.sql",
     "db:seed:remote": "wrangler d1 execute DB --remote --file ../../packages/db/seed.sql",
+    "demo:build": "vite build --config demo/vite.config.ts && bun demo/inline.ts",
     "deploy": "bun run build && wrangler deploy",
     "dev": "bun run db:apply && bun run db:seed && vite dev --port 3000",
     "generate-routes": "tsr generate",
@@ -65,7 +66,9 @@
     "@types/node": "^22.10.2",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "@types/sql.js": "1.4.11",
     "@vitejs/plugin-react": "^6.0.1",
+    "sql.js": "1.13.0",
     "typescript": "^5.9.2",
     "vite": "^8.0.0",
     "wrangler": "^4.147.0"

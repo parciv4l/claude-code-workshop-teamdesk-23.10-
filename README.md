@@ -14,6 +14,10 @@ bun run dev
 
 There is no sign-in yet. Pages that change data have a member picker, and the chosen member is sent as `actorId` with every mutation.
 
+## Browser demo
+
+`bun run --filter web demo:build` builds a static copy of the app that needs no server: the same routes, tRPC router, services and Drizzle queries, run in the page against SQLite compiled to JavaScript ([sql.js](https://sql.js.org)), with the migrations, the demo data and some extra example rows. It writes one self-contained file, `apps/web/demo/dist/teamdesk-demo.html`, that you can host anywhere. Each viewer's changes stay in their own browser. The sources are in [`apps/web/demo`](apps/web/demo).
+
 ## Layout
 
 - [`apps/web`](apps/web): the TanStack Start app. Hono is the Worker's `fetch` handler, tRPC is mounted at `/api/trpc`. See its [README](apps/web/README.md).
