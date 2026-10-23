@@ -2,8 +2,10 @@ import { TanStackDevtools } from "@tanstack/react-devtools";
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TooltipProvider } from "#/components/ui/tooltip";
+import ClickConfetti from "../components/click-confetti";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import MatrixRain from "../components/matrix-rain";
 import ThemedToaster from "../components/themed-toaster";
 
 import appCss from "../styles.css?url";
@@ -44,6 +46,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body className="flex min-h-dvh flex-col font-sans antialiased [overflow-wrap:anywhere] selection:bg-primary/30">
         <TooltipProvider>
+          <MatrixRain />
+          <ClickConfetti />
           <Header />
           {/* flex-1 pushes the footer to the bottom on short pages. */}
           <div className="flex-1 pb-20">{children}</div>
